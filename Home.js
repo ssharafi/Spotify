@@ -3,22 +3,6 @@ import { Button } from 'react-native';
 import { FlatList, StyleSheet, Text, View, TouchableOpacity,  } from 'react-native';
 
 const Home = ({ navigation }) => {
-    console.log('Home component rendered');
-
-
-//   function loadMoreMovies() {
-//   fetch('https://reactnative.dev/movies.json')
-//     .then((response) => response.json())
-//     .then((json) => {  
-//       /* view the JSON that's returned in the server log */ 
-//       console.log(json);
-//       setListData(listData.concat(json.movies));
-      
-//     })
-//     .catch((error) => {
-//        console.error(error);
-//     });
-//   };  
          
   return (
     <View style={styles.container}>
