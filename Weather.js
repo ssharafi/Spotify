@@ -55,7 +55,9 @@ const Weather = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Weather App</Text>
+      <View style={styles.center}>
+        <Text style={styles.header}>Weather App</Text>
+      </View>
       <TextInput
         style={styles.item}
         placeholder="Enter Town Name"
@@ -109,9 +111,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
-    fontSize: 25,
-    height: 54, 
-  },
+    flexWrap: 'wrap', 
+    width: '100%', 
+},
   item: {
     padding: 10,
     fontSize: 25,
