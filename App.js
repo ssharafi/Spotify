@@ -3,19 +3,17 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from './Home';
-import TopTracks from './TopTracks';
-import TopArtists from './TopArtists';
+import Weather from './Weather';
+import WhatToWear from './WhatToWear';
 
-const Stack = createNativeStackNavigator(); // Add this line
+const Stack = createNativeStackNavigator(); 
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Top Tracks" component={TopTracks} />  
-        <Stack.Screen name="Top Artists" component={TopArtists} />  
+      <Stack.Navigator initialRouteName="Weather">
+        <Stack.Screen name="Weather" component={Weather} /> 
+        <Stack.Screen name="WhatToWear" component={WhatToWear} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
