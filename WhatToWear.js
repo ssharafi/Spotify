@@ -30,7 +30,7 @@ const WhatToWear = ({route}) => {
     
     return (
         <View style={styles.container}>
-            <View style={styles.center}>
+            <View>
                 <View style={styles.clothingIconContainer}>
                     <Image
                     source={{ uri: 'https://i.postimg.cc/qqgkJwjL/clothes-rack.png' }} // Replace with your sunset icon URL
