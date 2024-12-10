@@ -96,6 +96,10 @@ const Weather = ({ navigation }) => {
               onPress={() => navigation.navigate('WeatherMap', { weather })}
             />
             <Button
+              title="Sunrise and Sunset Times"
+              onPress={() => navigation.navigate('SunriseSunset', { weather })}
+            />
+            <Button
               title="What Should I Wear?"
               onPress={() => navigation.navigate('WhatToWear', { weather })}
             />

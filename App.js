@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Weather from './Weather';
 import WhatToWear from './WhatToWear';
 import WeatherMap from './WeatherMap';
+import SunriseSunset from './SunriseSunset';
 
 const Stack = createNativeStackNavigator(); 
 
@@ -16,6 +17,7 @@ export default function App() {
         <Stack.Screen name="Weather" component={Weather} /> 
         <Stack.Screen name="WhatToWear" component={WhatToWear} /> 
         <Stack.Screen name="WeatherMap" component={WeatherMap} />
+        <Stack.Screen name="SunriseSunset" component={SunriseSunset} />
       </Stack.Navigator>
     </NavigationContainer>
   );
