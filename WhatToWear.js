@@ -26,8 +26,8 @@ const WhatToWear = ({route}) => {
     
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Welcome to the "What Should I Wear?" page!</Text>
-            <Text>Temperature: {temperature}°F</Text>
+            <Text style={styles.text}>Want to know what to wear?</Text>
+            <Text>It is {temperature}°F out right now.</Text>
             <Text>Outfit Suggestion: {outfitSuggestion} {outfitSuggestion2}</Text>
 
         </View>
@@ -35,18 +35,39 @@ const WhatToWear = ({route}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    margin: 20,
-  },
+    container: {
+        paddingTop: 50,
+        paddingBottom: 50,
+      },
+      center: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        fontSize: 25,
+        height: 54, 
+      },
+      item: {
+        padding: 10,
+        fontSize: 25,
+        height: 54,
+      },
+      header: {
+        fontSize: 32,
+        fontWeight: 'bold',
+      },
+      iconContainer: {
+        backgroundColor: '#add8e6',
+        borderRadius: 10,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 10,
+      },
+      icon: {
+        width: 100,
+        height: 100,
+        marginVertical: 10,
+      },
 });
 
 export default WhatToWear;
