@@ -77,7 +77,7 @@ const Weather = ({ navigation }) => {
         weather && (
           <View>
             <View>
-                <Text style={styles.center}>{town}</Text>
+                <Text style={styles.item}>{town}</Text>
             </View>
             <Text style={styles.item}>
               Temperature: {Math.round(((weather.main.temp - 273.15) * 9) / 5 + 32)}°F
