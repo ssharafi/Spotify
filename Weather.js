@@ -107,6 +107,10 @@ const Weather = ({ navigation }) => {
               title="What Should I Wear?"
               onPress={() => navigation.navigate('WhatToWear', { weather })}
             />
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
+            <Text></Text>
           </View>
         )
       )}
