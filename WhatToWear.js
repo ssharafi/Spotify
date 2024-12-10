@@ -31,8 +31,14 @@ const WhatToWear = ({route}) => {
     return (
         <View style={styles.container}>
             <View style={styles.center}>
-                <Text style={styles.header}>What to wear!</Text>
-                <Text style={styles.item}>It is {temperature}°F out right now.</Text>
+                <View style={styles.clothingIconContainer}>
+                    <Image
+                    source={{ uri: 'https://i.postimg.cc/qqgkJwjL/clothes-rack.png' }} // Replace with your sunset icon URL
+                    style={styles.icon}
+                    />
+                    <Text style={styles.header}>What to Wear!</Text>
+                </View>
+                <Text style={styles.item}>It is {temperature}°F right now.</Text>
                 <Text style={styles.item}>Outfit Suggestion: {outfitSuggestion} {outfitSuggestion2}</Text>
             </View>
         </View>
@@ -62,19 +68,26 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10, 
     },
-      iconContainer: {
+    iconContainer: {
         backgroundColor: '#add8e6',
         borderRadius: 10,
         padding: 10,
         alignItems: 'center',
         justifyContent: 'center',
         marginVertical: 10,
-      },
-      icon: {
+    },
+    clothingIconContainer: {
+        borderRadius: 10,
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 10,
+    },
+    icon: {
         width: 100,
         height: 100,
         marginVertical: 10,
-      },
+    },
 });
 
 export default WhatToWear;

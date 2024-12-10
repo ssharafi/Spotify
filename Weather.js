@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button } from 'react-native';
+import { Button, ScrollView } from 'react-native';
 import { StyleSheet, Text, View, TextInput, Image } from 'react-native';
 import axios from 'axios';
 
@@ -54,7 +54,7 @@ const Weather = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.weatherIconContainer}>
           <Image
             source={{ uri: 'https://i.postimg.cc/bvbS8ysJ/meteorology.png' }} // Replace with your sunset icon URL
@@ -110,7 +110,7 @@ const Weather = ({ navigation }) => {
           </View>
         )
       )}
-    </View>
+    </ScrollView>
   );
 };
 
