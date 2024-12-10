@@ -55,8 +55,12 @@ const Weather = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.center}>
-        <Text style={styles.header}>Weather App</Text>
+      <View style={styles.weatherIconContainer}>
+          <Image
+            source={{ uri: 'https://i.postimg.cc/bvbS8ysJ/meteorology.png' }} // Replace with your sunset icon URL
+            style={styles.icon}
+          />
+          <Text style={styles.header}>Weather App</Text>
       </View>
       <TextInput
         style={styles.item}
@@ -133,6 +137,13 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     backgroundColor: '#add8e6',
+    borderRadius: 10,
+    padding: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 10,
+  },
+  weatherIconContainer: {
     borderRadius: 10,
     padding: 10,
     alignItems: 'center',
