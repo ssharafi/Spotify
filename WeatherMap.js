@@ -1,35 +1,24 @@
-import React, { useState } from 'react';
-import { Button } from 'react-native';
-import { FlatList, StyleSheet, Text, View, TouchableOpacity, TextInput, Image, } from 'react-native';
-import axios from 'axios';
+import React from 'react';
+import { StyleSheet, View, Dimensions } from 'react-native';
+import MapView, { UrlTile } from 'react-native-maps';
 
 const WeatherMap = ({route}) => {
     
     const { weather } = route.params;
 
-    const tempInFahrenheit = Math.round(((weather.main.temp - 273.15) * 9) / 5 + 32);
-    const [temperature, setTemperature] = useState(tempInFahrenheit);
+    const latitude = weather.coord.lat;
+    const longitude = weather.coord.lon;
 
-    let outfitSuggestion = '';
-    if (temperature > 75) {
-        outfitSuggestion = 'Wear light clothing like shorts and a t-shirt.';
-    } else if (temperature > 50) {
-        outfitSuggestion = 'Consider wearing a jacket and pants.';
-    } else {
-        outfitSuggestion = 'Dress warmly with a coat, scarf, and gloves.';
-    }
-
-    let outfitSuggestion2 = '';
-    if (weather.weather[0].main == "Rain")
-        outfitSuggestion2 = 'It is raining! Make sure you are wearing a raincoat!';
-
+    const region = {latitude, longitude, latitudeDelta: 0.2, longitudeDelta: 0.2,};
     
+    const baseTileUrl = "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png";
+
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Welcome to the "Weather Map" page!</Text>
-            <Text>Temperature: {temperature}°F</Text>
-            <Text>Outfit Suggestion: {outfitSuggestion} {outfitSuggestion2}</Text>
-
+            <MapView style={styles.map} initialRegion={region}>
+                <UrlTile urlTemplate={baseTileUrl} maximumZ={19} flipY={false} />
+                <UrlTile urlTemplate="https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=934e6493871a44a01d29166c1a3aa967" maximumZ={19} flipY={false} />
+            </MapView>
         </View>
     );
 };
@@ -46,6 +35,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     margin: 20,
+  },
+  map: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   },
 });
 
